@@ -13,6 +13,7 @@ async function main(){
     const proposals = params.slice(2);
     const contractAddress = proposals[0];
     const wallet = ethers.Wallet.fromMnemonic(process.env.MNEMONIC ?? "");
+    //const wallet = new ethers.Wallet(process.env.PRIVATE_KEY ?? "");
     const signer = wallet.connect(provider);
     const balanceBN = await signer.getBalance();
     console.log(`Connected to the account of ${signer.address}

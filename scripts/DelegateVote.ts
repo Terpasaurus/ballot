@@ -15,6 +15,7 @@ async function main(){
     const walletIndex = params[2];
     const path = `m/44'/60'/0'/0/${walletIndex}`; //set wallet path  
     const wallet = ethers.Wallet.fromMnemonic(process.env.MNEMONIC ?? "", path);
+    //const wallet = new ethers.Wallet(process.env.PRIVATE_KEY ?? "");
     const signer = wallet.connect(provider);
     const balanceBN = await signer.getBalance();
 
