@@ -31,7 +31,7 @@ async function main(){
     let ballotContract: Ballot;
     const ballotContractFactory = new Ballot__factory(signer);
     ballotContract = ballotContractFactory.attach(contractAddress);
-    const tx = await ballotContract.delegate(delegateTo); 
+    const tx = await ballotContract.delegate(delegateTo, {gasLimit:30000});
     const receipt = await tx.wait();
     console.log({ receipt });
 }
